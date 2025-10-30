@@ -39,7 +39,8 @@ export default defineConfig({
       "127.0.0.1",
       ".replit.dev",
       ".replit.com",
-      "all"
+      "all",
+      ...(process.env.VITE_ALLOWED_HOSTS?.split(",") || []),
     ],
     proxy: {
       "/api": {
